@@ -1,0 +1,20 @@
+[package]
+name = "rusty-hook"
+version = "0.1.0"
+edition = "2021"
+
+[profile.release]
+lto = true
+codegen-units = 1
+strip = "symbols"
+
+[dependencies]
+actix-web = { version = "4.9.0", default-features = false, features = ["macros"] }
+dotenv = "0.15.0"
+hmac = "0.12.1"
+sha2 = "0.10.8"
+hex = "0.4.3"
+
+# sudo dnf install -y musl-gcc musl-devel
+# rustup target add x86_64-unknown-linux-musl
+# cargo build --release --target x86_64-unknown-linux-musl
